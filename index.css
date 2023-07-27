@@ -1,0 +1,409 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(86, 41, 122);
+    color:white;
+    
+}
+
+#header{
+position: fixed;
+top: 0;
+left:0;
+width:100%;
+display: flex;
+align-items: center;
+padding: 10px 20px;
+z-index: 2;
+
+}
+#name{
+    
+    font-family: Papyrus ;
+}
+
+
+#navbar{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 60px;
+    top:20px;
+    width:3rem;
+    align-items: center;
+    height: 30rem;
+
+}
+#navbar a{
+text-decoration: none;
+color:white;
+padding: 5px;
+border-radius: 50%;
+margin-top: 40px;
+font-size: 35px;
+}
+#navbar a:hover{
+    background-color: rgb(70, 2, 70);
+    box-shadow: 1px 1px rgb(243, 243, 243);
+}
+  
+
+/*home*/
+#Home{min-height: 100vh;
+    display: flex;
+    position: relative;
+    
+    
+    }
+    
+    #image-box{
+        position: absolute;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        width: 20%;
+        top:200px;
+        right:20%; 
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(110,9,121,1) 38%, rgba(255,0,206,1) 100%);
+    }
+    #image-box:hover{
+        opacity: 0.5;
+        transition: 0.5s;
+    }
+    .writing{
+        min-height: 100vh;
+        padding-left: 9%;
+        padding-right: 9%;
+        max-width: 30rem;
+    
+        display: flex;
+    align-items: center;
+    
+        
+    }
+    .writing h1{
+        margin: 5px;
+    }
+     .animate{
+        margin:5px;
+        font-size: 2rem;
+        font-weight: bold;
+        color:transparent;
+        -webkit-text-stroke: 0.08rem blue;
+        background-image: linear-gradient(white,blue);
+        position: relative;
+        background-repeat: no-repeat;
+        width:fit-content;
+        z-index: 1;
+        -webkit-background-clip: text;
+        background-position: -20rem 0;
+        animation: textfiling 6s linear infinite;
+        animation-delay: 1s;
+    }
+    .animate::before{
+        content:"";
+        position: absolute;
+        top:0;
+        left:0;
+        height: 100%;
+        width: 0;
+        border-right: 1px solid white;
+        animation: cursurfiling 6s linear infinite;
+        animation-delay: 1s;
+    }
+    @keyframes textfiling{
+        0%,100%{background-position:-20rem 0;}
+        65%,75%{background-position: 0 0;}
+    }
+
+@keyframes cursurfiling{
+    0%,100%{width:0;}
+        65%,70%,75%{width:100%;
+        opacity: 1;}
+       68%, 72%{
+            opacity: 0;
+        }
+}
+
+
+    .writing p{
+        margin: 10px;
+        font-size: 1.3rem;
+        text-align: justify;
+    }
+    .btn-download{
+        margin-top: 20px;
+        width: 120px;
+        height: 20px;
+        padding: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        background-color: blueviolet;
+        border-radius: 8px;
+        color: white;
+        text-align: center;
+        box-shadow: 1px 2px black;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        text-justify: center;
+    }
+    .btn-download a{
+        text-align: center;
+        text-decoration: none;
+        color: white;
+    }
+    .btn-download::before
+    {content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width:0;
+    height: 100%;
+    background-color: rgb(81, 22, 136);
+    z-index: -1;
+    
+    }
+    .btn-download:hover::before{
+        width: 100%;
+        transition: 0.5s;
+    }
+
+    /*Education css*/
+#Education{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(68, 32, 99);
+    min-height: 100vh;
+}
+.title{
+margin-top: 40px;
+font-size: 3rem;
+text-align: center;
+padding-top:40px;
+padding-bottom: 40px;
+
+}
+.education-container
+{
+display: flex;
+flex-wrap: wrap;
+gap:5rem;
+padding-left: 15px;
+
+}
+.education-row{
+    max-width:400px;
+}
+
+.education-row h2{
+    font-size: 1.5rem;
+    margin:0 0 10px 12px;
+}
+.education-box{
+    padding-left: 12px;
+    border-left:1px solid white ;
+}
+.education-coloum{
+    border:1px solid white;
+    border-radius: 10px;
+    margin-bottom:17px;
+    margin-right: 12px;
+    position: relative;
+    z-index: 1;
+    padding: 6px;
+    
+}
+.education-coloum::before{
+content:"";
+position:absolute;
+width: 13px;
+height: 13px;
+border-radius: 50%;
+background-color: white;
+top:-4px;
+left:-20px;
+}
+.education-coloum::after{
+    position: absolute;
+    top:0;
+    left:0;
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color:rgb(49, 1, 49);
+    z-index: -1;
+    border-radius: 10px;
+}
+.education-coloum:hover::after{
+    width: 100%;
+    transition: 0.8s;
+}
+
+
+.calender{
+    font-size: small;
+    margin-bottom: 4px;
+}
+.calender i{
+    margin-right:2px ;
+}
+.institute{
+    font-weight: bold;
+    padding: 2px 0 2px 2px;
+}
+    /* Projects*/
+#Projects{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;}
+.project-colomn
+{ 
+display: flex;
+gap:30px;
+flex-wrap: wrap;
+justify-content: center;
+}
+.Project-photo{
+    --border-angle: 0turn;
+    border-radius: 10px;
+    width:22rem;
+    height: 15rem;
+    object-fit: fill;
+    cursor: pointer;
+    background-image: conic-gradient(from var(--border-angle),transparent 20%, rgb(14, 10, 247), rgb(250, 29, 29));
+    padding: 4px;
+    animation: ray 3s linear infinite;
+    &:hover{scale: 1.07;
+        animation-play-state: paused;}
+    
+}
+@keyframes ray {
+    to {
+      --border-angle: 1turn;
+    }
+}
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+
+.Project-Description{
+    position: absolute;
+    left:5%;
+    top:40%;
+}
+    /* Skills*/
+
+    #Skills{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(68, 32, 99);
+        min-height: 100vh;
+    position: relative;}
+    #slider{
+        position:absolute ;
+        width: 100%;
+        height: 70%;
+        background-image: linear-gradient(to right,rgb(68, 32, 99),white);
+        left:0;
+        bottom:0;
+        clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+        transition: width 3s;
+    }    
+
+    .skill-container{
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap:5rem;
+        justify-content: center;
+    }
+    .skill-row{
+        padding-left:8px;
+    }
+    .skill-content{
+        border: 1px solid white;
+        margin-top: 10px;
+        border-radius: 8px;
+        padding: 8px;
+        
+        }
+
+.progress-bar{
+   width:280px;
+    height: 8px;
+    border:1px solid white;
+    margin:2px 0 15px 0;
+    padding: 2px;
+    border-radius: 5px;
+}
+.progress{
+    height: 100%;
+    width:var(--wit);
+    background-color: rgb(134, 73, 190);
+}
+.percent{
+ float: right;   
+}
+/* Contact*/
+#Contact{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+form{display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid white;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    gap:10px;
+}
+.identity{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    justify-content: center;
+}
+.identity input{
+    width: 250px;
+    height: 25px;
+    border-radius: 5px;
+    margin-top: 4px;
+}
+input[name="message"]{
+width: 60%;
+height:8rem;
+border-radius: 5px;
+}
+input[type="submit"]{
+    width: 100px;
+    color:white;
+    background-color: blueviolet;
+    border-color: blueviolet;
+    height: 25px;
+    border-radius: 8px;
+    font-weight:bold ;
+   
+}
+input[type="submit"]:hover{
+    background-color: rgb(102, 22, 177);
+    border-color: blueviolet;
+}
